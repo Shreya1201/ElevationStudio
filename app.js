@@ -8,7 +8,7 @@ app.use(cors());
 app.get("/contact", cors(), (req, res) => {});
 
 app.post("/contact", async (req, res) => {
-  const { firstname, lastname, email, subject, phone, address, enquiry } =
+  const { firstName, lastName, email, subject, phone, address, enquiry } =
     req.body;
   //const { lastname } = req.body.lastname;
   //const { email } = req.body.email;
@@ -17,8 +17,8 @@ app.post("/contact", async (req, res) => {
   //const { address } = req.body.address;
   //const { enquiry } = req.body.enquiry;
   const data = {
-    firstname: firstname,
-    lastname: lastname,
+    firstName: firstName,
+    lastName: lastName,
     email: email,
     subject: subject,
     phone: phone,

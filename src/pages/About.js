@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import ImageOne from "../images/Slider/House-1.jpg";
+import ImageOne from "../images/founder/img.jpg";
+import ImageTwo from "../images/founder/about.JPG";
 const AboutContainer = styled.div`
   width: 100%;
   height: 100%;
-  padding: 4rem 0rem;
+  padding: 2.5rem 0rem;
 `;
 
 const AboutStart = styled.div`
@@ -12,7 +13,7 @@ const AboutStart = styled.div`
   flex-direction: column;
   justify-content: center;
   line-height: 1.4;
-  padding: 4rem 2rem;
+  padding: 6rem 2rem;
   text-align: center;
   h1 {
     margin-bottom: 1rem;
@@ -29,9 +30,13 @@ const AboutStart = styled.div`
   }
 
   img {
+    display: flex;
+    height: 80vh;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding-top: 3rem;
-    width: 50%;
-    height: 50%;
 
     @media screen and (max-width: 855px) {
       width: 90%;
@@ -77,7 +82,7 @@ const Approach = styled.div`
   padding: 3rem calc((100vw-1300px) / 2);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 800px;
+  grid-template-rows: 500px;
 
   @media screen and (max-width: 855px) {
     grid-template-columns: 1fr;
@@ -102,7 +107,6 @@ const ColumnLeft = styled.div`
 `;
 
 const ColumnRight = styled.div`
-  padding: 1rem 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -111,7 +115,6 @@ const ColumnRight = styled.div`
   }
 
   img {
-    padding-top: 3rem;
     width: 50%;
     height: 50%;
 
@@ -126,7 +129,7 @@ const Founders = styled.div`
   padding: 3rem calc((100vw-1300px) / 2);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 800px;
+  grid-template-rows: 400px;
 
   @media screen and (max-width: 855px) {
     grid-template-columns: 1fr;
@@ -146,14 +149,15 @@ const About = () => {
           turnkey solutions for our client’s homes, delivering singular and
           distinctive designs which reflect our values of thoughtful design.
         </p>
-        <img src={ImageOne} alt="about" />
+        <img src={ImageTwo} alt="about" />
       </AboutStart>
+      <h1 style={{ textAlign: "center" }}> About Founders</h1>
       <Founders>
         <ColumnRight>
           <img src={ImageOne} alt="one" />
         </ColumnRight>
         <ColumnLeft>
-          <h1>About Founders</h1>
+          <h3>Abhishek Tyagi</h3>
           <p>
             We believe in good design Our passion for quality drives us to
             create innovative, unique, and more functional spaces which change
@@ -165,9 +169,9 @@ const About = () => {
           </p>
         </ColumnLeft>
       </Founders>
-      <Approach>
+      <Founders>
         <ColumnLeft>
-          <h1>Our Approach</h1>
+          <h3>Supriya Sharma</h3>
           <p>
             We believe in good design Our passion for quality drives us to
             create innovative, unique, and more functional spaces which change
@@ -181,7 +185,18 @@ const About = () => {
         <ColumnRight>
           <img src={ImageOne} alt="one" />
         </ColumnRight>
-      </Approach>
+      </Founders>
+      <AboutStart>
+        <h1>Our Approach</h1>
+        <p>
+          Golden Bricks Studio is a Delhi -NCR based interior architecture and
+          design studio specializing in delivering meticulously tailored
+          residential, commercial and hospitality projects. Our high-end design
+          services are tailored to meet each client’s needs that encompass total
+          turnkey solutions for our client’s homes, delivering singular and
+          distinctive designs which reflect our values of thoughtful design.
+        </p>
+      </AboutStart>
       <Quality>
         <h1>Our Quality Guarantee</h1>
         <p>

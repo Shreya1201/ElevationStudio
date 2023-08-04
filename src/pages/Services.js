@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import "./services.css";
-import _1png from "../images/services/1.png";
-import _2png from "../images/services/2.png";
-import _3png from "../images/services/3.png";
-import _4png from "../images/services/4.png";
-import _5png from "../images/services/5.png";
-import _6png from "../images/services/6.png";
+import img1 from "../images/work/1.JPG";
+import img2 from "../images/work/2.JPG";
+import img3 from "../images/work/3.JPG";
+import img4 from "../images/work/4.JPG";
+import img5 from "../images/work/5.JPG";
+import img6 from "../images/work/7.JPG";
 const ServicesContainer = styled.div`
   padding: 5rem;
 `;
@@ -20,7 +20,7 @@ const Services = () => {
           <div className="container-3">
             <div className="container">
               <div className="container-img">
-                <img src={_1png} alt="h" width="350" height="350" />
+                <img src={img1} alt="h" width="350" height="350" />
                 <div className="middle">
                   <p>Bathroom</p>
                 </div>
@@ -40,7 +40,7 @@ const Services = () => {
             </div>
             <div className="container">
               <div className="container-img">
-                <img src={_2png} alt="h" width="350" height="350" />
+                <img src={img2} alt="h" width="350" height="350" />
               </div>
               <div className="container-title">
                 <h5>Interior Design</h5>
@@ -56,7 +56,7 @@ const Services = () => {
             </div>
             <div className="container">
               <div className="container-img">
-                <img src={_3png} alt="h" width="350" height="350" />
+                <img src={img3} alt="h" width="350" height="350" />
               </div>
               <div className="container-title">
                 <h5>Furniture Design</h5>
@@ -74,7 +74,7 @@ const Services = () => {
           <div className="container-3">
             <div className="container">
               <div className="container-img">
-                <img src={_4png} alt="h" width="350" height="350" />
+                <img src={img4} alt="h" width="350" height="350" />
               </div>
               <div className="container-title">
                 <h5>Detailed Estimation</h5>
@@ -89,7 +89,7 @@ const Services = () => {
             </div>
             <div className="container">
               <div className="container-img">
-                <img src={_5png} alt="h" width="350" height="350" />
+                <img src={img5} alt="h" width="350" height="350" />
               </div>
               <div className="container-title">
                 <h5>3D Designing Services</h5>
@@ -105,7 +105,7 @@ const Services = () => {
             </div>
             <div className="container">
               <div className="container-img">
-                <img src={_6png} alt="h" width="350" height="350" />
+                <img src={img6} alt="h" width="350" height="350" />
               </div>
               <div className="container-title">
                 <h5>Artworks</h5>

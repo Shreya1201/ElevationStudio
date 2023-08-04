@@ -71,7 +71,7 @@ const ColumnRight = styled.div`
 `;
 
 const Container2 = styled.div`
-  padding: 3rem;
+  padding: 0rem;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 800px;
   text-align: center;
@@ -81,8 +81,8 @@ const Container2 = styled.div`
 `;
 
 const Containerheading = styled.div`
-  padding-top: 8rem;
-  padding-bottom: 5rem;
+  padding-top: 6rem;
+  padding-bottom: 2rem;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 800px;
 
@@ -92,7 +92,6 @@ const Containerheading = styled.div`
 `;
 
 const ContainerGrid = styled.div`
-  padding: 3rem calc((100vw-1300px) / 2);
   display: flex;
   align-items: center;
   grid-template-columns: 1fr 1fr;
@@ -113,12 +112,11 @@ const Grid = styled.div`
     margin-bottom: 1rem;
     font-size: clamp(1.5rem, 6vw, 2rem);
   }
-
-  p {
-    margin-bottom: 2rem;
-  }
   h3 {
     color: #cd853f;
+  }
+  p {
+    padding-bottom: 10px;
   }
 
   line-height: 1.4;
@@ -126,8 +124,10 @@ const Grid = styled.div`
 `;
 
 const ServiceGrid = styled.div`
-  padding: 3rem calc((100vw-1300px) / 2);
   display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 800px;
@@ -138,7 +138,7 @@ const ServiceGrid = styled.div`
 `;
 
 const SGrid = styled.div`
-  margin: 1rem;
+  color: #cd853f;
   img {
     width: 100%;
     height: 100%;
@@ -152,6 +152,10 @@ const SGrid = styled.div`
 `;
 
 const Btn = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 5rem;
   text-align: center;
   @media screen and (max-width: 855px) {
@@ -184,7 +188,7 @@ const InfoSection = ({
           <h1>{heading}</h1>
           <p>{paragraphOne}</p>
           <p>{paragraphTwo}</p>
-          <Button to="/home" primary="true">
+          <Button to="/about" primary="true">
             {buttonLabel}
           </Button>
         </ColumnLeft>
@@ -215,7 +219,7 @@ const InfoSection = ({
             <h1>Personal attention from start to end</h1>
             <p>
               Well-planned schedule, customized design details and guidance with
-              regular site visits
+              regular site visits.
             </p>
           </Grid>
           <Grid>
@@ -229,17 +233,17 @@ const InfoSection = ({
       </Container2>
       <Container2>
         <Containerheading>
-          <h1>Our Services Include</h1>
+          <h1>Some of Our Services Include</h1>
         </Containerheading>
         <ServiceGrid>
           <SGrid>
-            <img src={ImageOne} alt="" />
+            <h1>Detailed Estimation</h1>
           </SGrid>
           <SGrid>
-            <img src={ImageTwo} alt="" />
+            <h1>3D Design Services</h1>
           </SGrid>
           <SGrid>
-            <img src={ImageThree} alt="" />
+            <h1>Interior Design</h1>
           </SGrid>
         </ServiceGrid>
         <Btn>
@@ -251,40 +255,40 @@ const InfoSection = ({
       </Container2>
       <Container2>
         <Containerheading>
-          <h1>Satisfied Customers</h1>
+          <h1>Our Satisfied Clients</h1>
         </Containerheading>
         <ContainerGrid>
           <Grid>
             <Iconleft />
             <p>
-              “I'm a testimonial. Click to edit me and add text that says
+              I'm a testimonial. Click to edit me and add text that says
               something nice about you and your services. Let your customers
               review you and tell their friends how great you are.” Dave
-              Reddington“
+              Reddington
             </p>
-            <Iconright />
+            {/*<Iconright />*/}
             <h3>Rajiv</h3>
           </Grid>
           <Grid>
             <Iconleft />
             <p>
-              “I'm a testimonial. Click to edit me and add text that says
+              I'm a testimonial. Click to edit me and add text that says
               something nice about you and your services. Let your customers
               review you and tell their friends how great you are.” Dave
               Reddington
             </p>
-            <Iconright />
+            {/*<Iconright />*/}
             <h3>Rajiv</h3>
           </Grid>
           <Grid>
             <Iconleft />
             <p>
-              “I'm a testimonial. Click to edit me and add text that says
+              I'm a testimonial. Click to edit me and add text that says
               something nice about you and your services. Let your customers
               review you and tell their friends how great you are.” Dave
               Reddington
             </p>
-            <Iconright />
+            {/*<Iconright />*/}
             <h3>Rajiv</h3>
           </Grid>
         </ContainerGrid>

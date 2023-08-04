@@ -6,8 +6,8 @@ import { Button } from "./Button";
 import { FaBars } from "react-icons/fa";
 import logo from "../images/logo-removebg.png";
 const Nav = styled.nav`
-  background: ${({ navbar }) => (navbar ? "white" : "transparent")};
-  height: 60px;
+  background: ${({ navbar }) => (navbar ? "#000d1a" : "rgba(0,0,0,0.3)")};
+  height: 70px;
   display: flex;
   justify-content: space-between;
   padding: 1rem 2rem;
@@ -20,7 +20,7 @@ const Nav = styled.nav`
 `;
 
 const NavLink = css`
-  color: #000d1a;
+  color: white;
   display: flex;
   align-items: center;
   padding: 0 1rem;
@@ -32,6 +32,10 @@ const NavLink = css`
 
 const Logo = styled(Link)`
   ${NavLink}
+  img {
+    height: 120%;
+    margin: 2px;
+  }
 `;
 
 const MenuBars = styled(FaBars)`
@@ -87,6 +91,11 @@ const Navbar = ({ toggle }) => {
       setnavbar(false);
     }
   };
+
+  const handleLinkClick = () => {
+    window.scrollTo(0, 0);
+  };
+
   useEffect(() => {
     window.addEventListener("scroll", changebg);
     return () => {
@@ -96,13 +105,14 @@ const Navbar = ({ toggle }) => {
 
   return (
     <Nav navbar={navbar}>
-      <Logo src={logo} to="/">
-        AB ARCHI STUDIO
+      <Logo to="/">
+        <img src={logo} alt="" />
+        GOLDEN BRICKS STUDIO
       </Logo>
       <MenuBars onClick={toggle} />
       <NavMenu>
         {menuData.map((item, index) => (
-          <NavMenuLinks to={item.link} key={index}>
+          <NavMenuLinks to={item.link} key={index} onClick={handleLinkClick}>
             {item.title}
           </NavMenuLinks>
         ))}

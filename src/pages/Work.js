@@ -1,39 +1,74 @@
-import "../pages/work.css";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 import styled from "styled-components";
+import img1 from "../images/work/1.JPG";
+import img2 from "../images/work/2.JPG";
+import img3 from "../images/work/3.JPG";
+import img4 from "../images/work/4.JPG";
+import img5 from "../images/work/5.JPG";
+import img6 from "../images/work/6.JPG";
+import img7 from "../images/work/7.JPG";
 
+import "./work.css";
 export default function Work() {
   const images = [
     {
-      original: "https://picsum.photos/id/1018/1000/600/",
-      thumbnail: "https://picsum.photos/id/1018/250/150/",
-      description:
-        "Golden Bricks Studio is a Delhi -NCR based interior architecture and design studio specializing in delivering meticulously tailored residential, commercial and hospitality projects. Our high-end design services are tailored to meet each client’s needs that encompass total turnkey solutions for our client’s homes, delivering singular and distinctive designs which reflect our values of thoughtful design.",
+      original: img1,
+      thumbnail: img1,
+      description: "Golden Bricks Studio.",
     },
     {
-      original: "https://picsum.photos/id/1015/1000/600/",
-      thumbnail: "https://picsum.photos/id/1015/250/150/",
-      description:
-        "Golden Bricks Studio is a Delhi -NCR based interior architecture and design studio specializing in delivering meticulously tailored residential, commercial and hospitality projects. Our high-end design services are tailored to meet each client’s needs that encompass total turnkey solutions for our client’s homes, delivering singular and distinctive designs which reflect our values of thoughtful design.",
+      original: img2,
+      thumbnail: img2,
+      description: "Golden Bricks Studio.",
     },
     {
-      original: "https://picsum.photos/id/1019/1000/600/",
-      thumbnail: "https://picsum.photos/id/1019/250/150/",
-      description:
-        "Golden Bricks Studio is a Delhi -NCR based interior architecture and design studio specializing in delivering meticulously tailored residential, commercial and hospitality projects. Our high-end design services are tailored to meet each client’s needs that encompass total turnkey solutions for our client’s homes, delivering singular and distinctive designs which reflect our values of thoughtful design.",
+      original: img3,
+      thumbnail: img3,
+      description: "Golden Bricks Studio.",
+    },
+    {
+      original: img4,
+      thumbnail: img4,
+      description: "Golden Bricks Studio.",
+    },
+    {
+      original: img5,
+      thumbnail: img5,
+      description: "Golden Bricks Studio.",
+    },
+    {
+      original: img6,
+      thumbnail: img6,
+      description: "Golden Bricks Studio.",
+    },
+    {
+      original: img7,
+      thumbnail: img7,
+      description: "Golden Bricks Studio.",
     },
   ];
   const Workcontainer = styled.div`
-    width: 100%;
-    height: 100%;
-    padding: 7rem 1rem;
+    padding-top: 140px;
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-bottom: 100px;
+    h1 {
+      text-align: center;
+    }
+    p {
+      text-align: center;
+      padding-bottom: 50px;
+    }
   `;
 
   return (
     <Workcontainer>
+      <h1>Our Work</h1>
+      <p>All our past works</p>
       <ImageGallery
         items={images}
+        originalHeight={2000}
         showPlayButton={true}
         showFullscreenButton={true}
         slideInterval={3000}

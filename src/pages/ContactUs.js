@@ -24,8 +24,13 @@ const StyledForm = styled.form`
 
 const StyledLabel = styled.label`
   margin-bottom: 5px;
+
   padding: 16px;
   font-weight: bold;
+  display: flex;
+  p {
+    font-weight: italic;
+  }
 `;
 
 const StyledInput = styled.input`
@@ -47,7 +52,7 @@ const StyledInputArea = styled.div`
 
 const StyledLabel2 = styled.div`
   display: flex;
-  padding: 16px;
+  align-items: flex-start;
 `;
 
 const StyledLabel1 = styled.div`
@@ -70,6 +75,7 @@ const Parag = styled.div`
 
 const Btn = styled.div`
   padding: 2rem;
+  margin-left: 40vh;
   align-item: center;
   text-align: center;
   @media screen and (max-width: 855px) {
@@ -95,21 +101,26 @@ function ContactUs() {
   const [enquiry, setEnquiry] = useState("");
 
   const submit = async (e) => {
-    e.preventDefault();
-    try {
-      alert("submitted");
-      await axios.post("http://localhost:8000/contact", {
-        firstName,
-        lastName,
-        email,
-        phone,
-        address,
-        subject,
-        enquiry,
-      });
-    } catch (e) {
-      console.log(e);
+    if (firstName === "" || email === "" || phone === "" || enquiry === "") {
+      alert("* fields cannot be empty");
+    } else {
+      e.preventDefault();
+      try {
+        alert("Thanks, we will surely revert back soon");
+        await axios.post("http://localhost:8000/contact", {
+          firstName,
+          lastName,
+          email,
+          phone,
+          address,
+          subject,
+          enquiry,
+        });
+      } catch (e) {
+        console.log(e);
+      }
     }
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -137,7 +148,9 @@ function ContactUs() {
         <StyledForm>
           <form action="POST">
             <StyledLabel2>
-              <StyledLabel>First Name: </StyledLabel>
+              <StyledLabel>
+                First Name<p></p>:{" "}
+              </StyledLabel>
               <StyledInput
                 type="text"
                 value={firstName}
@@ -153,7 +166,9 @@ function ContactUs() {
               />
             </StyledLabel2>
             <StyledLabel2>
-              <StyledLabel>Email: </StyledLabel>
+              <StyledLabel>
+                Email<p></p>:
+              </StyledLabel>
               <StyledInput
                 type="email"
                 value={email}
@@ -198,12 +213,17 @@ function ContactUs() {
                 />
               </StyledInputArea>
             </StyledLabel1>
+
+            <p>
+              Make sure to avoid including any sensitive information you don't
+              want to share with this business.
+            </p>
             <Btn>
               <Button
                 type="submit"
                 onClick={submit}
                 value="Submit"
-                to="/"
+                to="/contact"
                 primary="true"
               >
                 Submit
