@@ -97,8 +97,12 @@ const ColumnLeft = styled.div`
   line-height: 1.4;
   padding: 1rem 2rem;
   h1 {
+    color: #cd853f;
     margin-bottom: 1rem;
     font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+  h3 {
+    color: #cd853f;
   }
 
   p {

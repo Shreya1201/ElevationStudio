@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 import { Button } from "./Button";
 import { IoMdArrowRoundForward } from "react-icons/io";
 import { Link } from "react-router-dom";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import { SlSocialInstagram } from "react-icons/sl";
 import { SlSocialTwitter } from "react-icons/sl";
 import { SiLinkedin } from "react-icons/si";
@@ -106,6 +107,17 @@ const LinkedIn = styled(SiLinkedin)`
   }
 `;
 
+const Map = styled(FaMapMarkerAlt)`
+  margin: 20px;
+  color: white;
+  height: 35px;
+  width: 30px;
+  @media screen and (max-width: 855px) {
+    height: 15px;
+    width: 15px;
+  }
+`;
+
 const Foot = styled.div`
   background: #000d1a;
   color: #fff;
@@ -162,6 +174,7 @@ const Footer = () => {
             Your Future Home
           </h1>
           <Button
+            onClick={handleLinkClick}
             to="/contact"
             primary="true"
             css={`
@@ -173,7 +186,7 @@ const Footer = () => {
           </Button>
         </FooterLeft>
         <FooterRight>
-          <Socials to="/">
+          <Socials to="https://instagram.com/goldenbricksstudio.gbs">
             <Instagran />
           </Socials>
           <Socials to="/">
@@ -184,6 +197,9 @@ const Footer = () => {
           </Socials>
           <Socials to="/">
             <LinkedIn />
+          </Socials>
+          <Socials to="https://www.google.com/maps/place/Sector+60,+Noida,+Uttar+Pradesh+201301/@28.6024018,77.3621961,16z/data=!3m1!4b1!4m6!3m5!1s0x390ce57029dfe9c1:0x24c49100744d251!8m2!3d28.6024748!4d77.3676142!16s%2Fg%2F1tznkr0b?entry=ttu">
+            <Map />
           </Socials>
         </FooterRight>
       </FooterContainer>

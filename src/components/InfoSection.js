@@ -11,6 +11,10 @@ const Section = styled.section`
   width: 100%;
   height: 100%;
   padding: 4rem 0rem;
+  margin-top: 20vw;
+  @media screen and (max-width: 855px) {
+    margin-top: 10vw;
+  }
 `;
 
 const Arrow = styled(IoMdArrowRoundForward)`
@@ -35,7 +39,6 @@ const ColumnLeft = styled.div`
   align-items: flex-start;
   line-height: 1.4;
   padding: 1rem 2rem;
-  order: ${({ reverse }) => (reverse ? "2" : "1")};
 
   h1 {
     margin-bottom: 1rem;
@@ -45,18 +48,16 @@ const ColumnLeft = styled.div`
   p {
     margin-bottom: 2rem;
   }
+  @media screen and (max-width: 855px) {
+    margin: 10 rem;
+  }
 `;
 
 const ColumnRight = styled.div`
   padding: 1rem 2rem;
-  order: ${({ reverse }) => (reverse ? "1" : "2")};
   display: flex;
   justify-content: center;
   align-items: center;
-
-  @media screen and(max-width:855px) {
-    order: ${({ reverse }) => (reverse ? "2" : "1")};
-  }
 
   img {
     width: 100%;
@@ -66,6 +67,7 @@ const ColumnRight = styled.div`
     @media screen and (max-width: 855px) {
       width: 90%;
       height: 90%;
+      margin: 1vh;
     }
   }
 `;
@@ -107,10 +109,15 @@ const Grid = styled.div`
   flex-direction: column;
   margin: 1rem;
   justify-content: center;
+
   h1 {
     color: #cd853f;
     margin-bottom: 1rem;
     font-size: clamp(1.5rem, 6vw, 2rem);
+
+    @media screen and (max-width: 855px) {
+      font-size: 20px; /* Adjust font size for smaller screens */
+    }
   }
   h3 {
     color: #cd853f;
@@ -121,6 +128,9 @@ const Grid = styled.div`
 
   line-height: 1.4;
   padding: 1rem 2rem;
+  @media screen and (max-width: 855px) {
+    padding: 1rem; /* Adjust padding for smaller screens */
+  }
 `;
 
 const ServiceGrid = styled.div`
@@ -158,6 +168,7 @@ const Btn = styled.div`
   align-items: center;
   padding: 5rem;
   text-align: center;
+
   @media screen and (max-width: 855px) {
     padding: 3rem;
   }
@@ -166,6 +177,11 @@ const Btn = styled.div`
 const Iconleft = styled(ImQuotesLeft)`
   height: 40px;
   width: 30px;
+
+  @media screen and (max-width: 855px) {
+    height: 30px; /* Adjust icon size for smaller screens */
+    width: 25px;
+  }
 `;
 
 const Iconright = styled(ImQuotesRight)`
@@ -181,6 +197,9 @@ const InfoSection = ({
   reverse,
   Image,
 }) => {
+  const handleLinkClick = () => {
+    window.scrollTo(0, 0);
+  };
   return (
     <Section>
       <Container>
@@ -188,7 +207,7 @@ const InfoSection = ({
           <h1>{heading}</h1>
           <p>{paragraphOne}</p>
           <p>{paragraphTwo}</p>
-          <Button to="/about" primary="true">
+          <Button to="/about" primary="true" onClick={handleLinkClick}>
             {buttonLabel}
           </Button>
         </ColumnLeft>
@@ -247,7 +266,7 @@ const InfoSection = ({
           </SGrid>
         </ServiceGrid>
         <Btn>
-          <Button to="/services" primary="true">
+          <Button to="/services" primary="true" onClick={handleLinkClick}>
             See All Services
             <Arrow />
           </Button>

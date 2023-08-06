@@ -43,6 +43,7 @@ const MenuBars = styled(FaBars)`
 
   @media screen and (max-width: 855px) {
     display: block;
+    color: 
     background-size: 60px;
     height: 40px;
     width: 30px;
@@ -66,6 +67,14 @@ const NavMenu = styled.div`
 
 const NavMenuLinks = styled(Link)`
   ${NavLink}
+  &:active {
+    color: #cd853f;
+    transform: translateY(-2px);
+  }
+
+  &.active {
+    color: #cd853f; /* Change this to your desired active link color */
+  }
   &:hover {
     color: #cd853f;
     transform: translateY(-2px);
@@ -112,13 +121,18 @@ const Navbar = ({ toggle }) => {
       <MenuBars onClick={toggle} />
       <NavMenu>
         {menuData.map((item, index) => (
-          <NavMenuLinks to={item.link} key={index} onClick={handleLinkClick}>
+          <NavMenuLinks
+            activeClassName="active"
+            to={item.link}
+            key={index}
+            onClick={handleLinkClick}
+          >
             {item.title}
           </NavMenuLinks>
         ))}
       </NavMenu>
       <NavBtn>
-        <Button to="/contact" primary="true">
+        <Button to="/contact" primary="true" onClick={handleLinkClick}>
           Contact Us
         </Button>
       </NavBtn>
